@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.NewTransactionActivity">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mybalance.viewModel.NewTransactionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginLeft="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginTop="@dimen/transaction_text_input_margin_top"
+            android:layout_marginEnd="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginRight="@dimen/transaction_text_input_margin_start_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/new_transaction_title_hint"
+                android:text="@={viewmodel.title}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amount"
+            android:layout_width="@dimen/transaction_amount_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginLeft="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginTop="@dimen/transaction_text_input_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/new_transaction_amount_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.amount}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/transaction_spinner_margin_top"
+            android:layout_marginEnd="@dimen/transaction_spinner_margin_end"
+            android:layout_marginRight="@dimen/transaction_spinner_margin_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginLeft="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginTop="@dimen/transaction_text_input_margin_top"
+            android:layout_marginEnd="@dimen/transaction_text_input_margin_start_end"
+            android:layout_marginRight="@dimen/transaction_text_input_margin_start_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amount">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/new_transaction_description_hint"
+                android:text="@={viewmodel.description}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/create_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/transaction_create_button_margin_top"
+            android:text="@string/new_transaction_create_button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            android:onClick="@{() -> viewmodel.onClickCreate()}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

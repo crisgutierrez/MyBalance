@@ -1,0 +1,24 @@
+<resources>
+
+    <!--    Transaction Item    -->
+    <dimen name="transaction_item_padding">8dp</dimen>
+    <dimen name="transaction_item_text_size">16sp</dimen>
+    <dimen name="transaction_title_margin_start">16dp</dimen>
+    <dimen name="transaction_amount_margin_end">32dp</dimen>
+
+    <!--    New Transaction    -->
+    <dimen name="transaction_text_input_margin_top">16dp</dimen>
+    <dimen name="transaction_text_input_margin_start_end">8dp</dimen>
+    <dimen name="transaction_amount_width">150dp</dimen>
+    <dimen name="transaction_spinner_margin_top">24dp</dimen>
+    <dimen name="transaction_spinner_margin_end">8dp</dimen>
+    <dimen name="transaction_create_button_margin_top">32dp</dimen>
+
+    <!--    Main Activity   -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="balance_margin_top">16dp</dimen>
+    <dimen name="balance_text_size">50sp</dimen>
+    <dimen name="transaction_divider_height">1dp</dimen>
+    <dimen name="transaction_divider_margin_top">16dp</dimen>
+    <dimen name="transaction_list_margin_top">16dp</dimen>
+</resources>
